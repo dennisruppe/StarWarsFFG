@@ -133,7 +133,7 @@ export default class EmbeddedItemHelpers {
       if (!item) {
         // this is a modifier on an attachment
         ownedItem.data.data.itemattachment.forEach((a) => {
-          modifierIndex = a.data[modifierType].findIndex((m) => m.id === modifierId);
+          modifierIndex = a.data[modifierType].findIndex((m) => m._id === modifierId || m.id === modifierId);
           if (modifierIndex > -1) {
             item = a.data[modifierType][modifierIndex];
           }
